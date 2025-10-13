@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User\UserService;
+use App\Models\User\Service;
 
 class ServiceController extends Controller
 {
@@ -13,7 +13,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = UserService::get();
+        $services = Service::get();
         return view('backend.page.setting.service.list', compact('services'));
     }
 
@@ -47,16 +47,10 @@ class ServiceController extends Controller
             'desc' => $request->desc,
             'status' => $request->status,
             'icon' => $iconPath,
-            'slug'=> generateUniqueSlug(UserService::class, $request->name),
+            'slug'=> generateUniqueSlug(Service::class, $request->name),
         ];
 
-        
-        // UserService::updateOrCreate(
-        //     ['slug' => $request->slug, 'user_id'=>userAuthId()],
-        //     $data
-        // );
-
-        UserService::create( $data );
+        Service::create( $data );
 
         return redirect()->route('service')->with('success', 'create successful!');
     }
@@ -64,7 +58,7 @@ class ServiceController extends Controller
 
     public function edit($slug)
     {
-        $service = UserService::where('slug', $slug)->first();
+        $service = Service::where('slug', $slug)->first();
         return view('backend.page.setting.service.edit', compact('service'));
     }
 
@@ -81,7 +75,7 @@ class ServiceController extends Controller
         
         $request->validate($validate);
 
-        $service = UserService::where('slug', $slug)->first();
+        $service = Service::where('slug', $slug)->first();
         $iconPath = $service->icon;
         if($request->hasFile('icon')){
             $icon = $request->file('icon');
@@ -103,10 +97,6 @@ class ServiceController extends Controller
         ];
 
         
-        // UserService::updateOrCreate(
-        //     ['slug' => $request->slug, 'user_id'=>userAuthId()],
-        //     $data
-        // );
 
         $service->update( $data );
 
@@ -115,7 +105,7 @@ class ServiceController extends Controller
 
     public function delete($slug)
     {
-        $service = UserService::where('slug', $slug)->first();
+        $service = Service::where('slug', $slug)->first();
         $service->delete();
         return view('backend.page.setting.service.edit', compact('service'));
     }

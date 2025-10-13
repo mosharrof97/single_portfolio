@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User\UserSlider;
-use App\Models\User\UserBanner;
+use App\Models\User\Slider;
+use App\Models\User\Banner;
 
 class SliderController extends Controller
 {
@@ -14,8 +14,8 @@ class SliderController extends Controller
      */
     public function index()
     {
-        $sliders = UserSlider::where('is_active', true)->get();
-        $banner = UserBanner::where('is_active', true)->first();
+        $sliders = Slider::where('is_active', true)->get();
+        $banner = Banner::where('is_active', true)->first();
         return view('backend.page.setting.create_slider_banner', compact('sliders','banner'));
     }
 
@@ -55,7 +55,7 @@ class SliderController extends Controller
             'image'=>$imageName,
         ];
 
-        UserSlider::create($data);
+        Slider::create($data);
 
         return redirect()->route('slider')->with('success', 'create successful!');
     }
@@ -75,7 +75,7 @@ class SliderController extends Controller
 
         $request->validate($validcheck);
 
-        $slider = UserSlider::where('id', $request->slider_id)->first();
+        $slider = Slider::where('id', $request->slider_id)->first();
         if(!$slider){
             return redirect()->route('slider')->with('error', 'Something wrong!'); 
         }
@@ -115,7 +115,7 @@ class SliderController extends Controller
      */
     public function destroy(string $id)
     {
-        $slider = UserSlider::where('id', $id)->first();
+        $slider = Slider::where('id', $id)->first();
 
         if(!$slider){
             return redirect()->route('slider')->with('error', 'Something wrong!'); 

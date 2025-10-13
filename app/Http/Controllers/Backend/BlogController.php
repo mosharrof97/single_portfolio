@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User\UserBlog;
-use App\Models\User\UserBlogCategory;
+use App\Models\User\Blog;
+use App\Models\User\BlogCategory;
 
 class BlogController extends Controller
 {
@@ -14,7 +14,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = UserBlog::orderBy('id','asc')->get();
+        $blogs = Blog::orderBy('id','asc')->get();
         return view('backend.page.setting.blog.list',compact('blogs'));
     }
 
@@ -23,7 +23,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        $categorys = UserBlogCategory::where('is_active',true)->orderBy('id','asc')->get();
+        $categorys = BlogCategory::where('is_active',true)->orderBy('id','asc')->get();
         return view('backend.page.setting.blog.create', compact('categorys'));
     }
 
@@ -55,10 +55,10 @@ class BlogController extends Controller
                 'desc'=>$request->desc,
                 'status'=>$request->status,
                 'image'=>$imageNamePath,
-                'slug' => generateUniqueSlug(UserBlog::class, $request->title),
+                'slug' => generateUniqueSlug(Blog::class, $request->title),
             ];
     
-            UserBlog::create($data);
+            Blog::create($data);
             
             // return redirect()->back()->withErrors($validator)->withInput();
             return redirect()->route('blog')->with('success', 'Blog Create Successful!');
@@ -78,8 +78,8 @@ class BlogController extends Controller
      */
     public function edit(string $slug)
     {
-        $categorys = UserBlogCategory::where('is_active',true)->orderBy('id','asc')->get();
-        $blog = UserBlog::where('slug',$slug)->orderBy('id','asc')->first();
+        $categorys = BlogCategory::where('is_active',true)->orderBy('id','asc')->get();
+        $blog = Blog::where('slug',$slug)->orderBy('id','asc')->first();
         
         return view('backend.page.setting.blog.edit',compact('blog','categorys'));
     }
@@ -102,7 +102,7 @@ class BlogController extends Controller
             }
             $request->validate($validate);
     
-            $blog = UserBlog::where('slug', $slug)->first();
+            $blog = Blog::where('slug', $slug)->first();
             if(!$blog){
                 return redirect()->route('blog')->with('error', 'Something is Wrong!');
             }
@@ -143,7 +143,7 @@ class BlogController extends Controller
         //     'status' => ['required'],
         // ]);
     
-        $blog = UserBlog::where('slug', $slug)->first();
+        $blog = Blog::where('slug', $slug)->first();
     
         if (!$blog) {
             return response()->json(['error' => 'Blog not found'], 404); 
@@ -164,7 +164,7 @@ class BlogController extends Controller
      */
     public function destroy(string $slug)    
     {
-        $blog = UserBlog::where('slug', $slug)->first();
+        $blog = Blog::where('slug', $slug)->first();
         if(!$blog){
             return redirect()->route('blog')->with('error', 'Something is Wrong!');
         }

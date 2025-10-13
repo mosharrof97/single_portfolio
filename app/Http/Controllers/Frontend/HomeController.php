@@ -5,7 +5,16 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User\User;
-use App\Models\User\UserSlider;
+use App\Models\User\Slider;
+use App\Models\User\Slider;
+use App\Models\User\Slider;
+use App\Models\User\Slider;
+use App\Models\User\Slider;
+use App\Models\User\Slider;
+use App\Models\User\Slider;
+use App\Models\User\Slider;
+use App\Models\User\Slider;
+use App\Models\User\Slider;
 
 class HomeController extends Controller
 {

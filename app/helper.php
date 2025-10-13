@@ -2,8 +2,8 @@
 use Illuminate\Support\Str;
 use App\Models\User\User;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User\UserService;
-use App\Models\User\UserSetting;
+use App\Models\User\Service;
+use App\Models\User\Setting;
 
 /**Auth ID**/ 
 function userAuthId(){

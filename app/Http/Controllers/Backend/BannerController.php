@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User\UserBanner;
+use App\Models\User\Banner;
 
 
 class BannerController extends Controller
@@ -20,7 +20,7 @@ class BannerController extends Controller
             'image' => 'required|file|image|max:2048',
         ]);
 
-        $banner = UserBanner::where('id', $request->banner_id)
+        $banner = Banner::where('id', $request->banner_id)
                     ->first();
 
         if (!$banner && $request->banner_id) {
@@ -47,7 +47,7 @@ class BannerController extends Controller
         $validatedData = [
             'image'=>$imageName,
         ];
-        UserBanner::updateOrCreate(
+        Banner::updateOrCreate(
             ['id' => $request->banner_id],
             $validatedData
         );

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User\UserSetting;
+use App\Models\User\Setting;
 
 
 class SettingController extends Controller
@@ -44,7 +44,7 @@ class SettingController extends Controller
             'title'=>$request->title,
             'desc'=>$request->desc,
         ];
-        UserSetting::UpdateOrCreate(['type'=>$request->type,], $data);
+        Setting::UpdateOrCreate(['type'=>$request->type,], $data);
 
         return redirect()->route('page_title_desc')->with('success','Successful!');
     }
