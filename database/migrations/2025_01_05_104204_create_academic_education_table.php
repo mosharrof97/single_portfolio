@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('academic_education', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('pd_id')->constrained('personal_details')->onUpdate('cascade')->onDelete('cascade');
             $table->string('edu_level');
             $table->string('exam_title');
             $table->string('major_group');

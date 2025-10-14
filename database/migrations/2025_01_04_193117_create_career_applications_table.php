@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('career_applications', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('pd_id')->constrained('personal_details')->onUpdate('cascade')->onDelete('cascade');
             $table->text('objective')->nullable();
             $table->decimal('present_salary')->default('0.00');
             $table->decimal('expected_salary')->default('0.00');

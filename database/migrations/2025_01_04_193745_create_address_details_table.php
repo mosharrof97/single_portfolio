@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('address_details', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('pd_id')->constrained('personal_details')->onUpdate('cascade')->onDelete('cascade');
             $table->string('present_location')->nullable();
             $table->string('present_district')->nullable();
             $table->string('present_thana')->nullable();

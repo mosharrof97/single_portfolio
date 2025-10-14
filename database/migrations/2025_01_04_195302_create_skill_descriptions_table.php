@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('skill_descriptions', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('pd_id')->constrained('personal_details')->onUpdate('cascade')->onDelete('cascade');
             $table->text('description');
             $table->string('slug')->unique();
             $table->boolean('is_active')->default(true);

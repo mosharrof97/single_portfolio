@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('professional_certifications', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('pd_id')->constrained('personal_details')->onUpdate('cascade')->onDelete('cascade');
             $table->string('certification');
             $table->string('institute');
             $table->text('desc',500)->nullable();
