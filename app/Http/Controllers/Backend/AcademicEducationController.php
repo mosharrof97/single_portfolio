@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\User\AcademicEducationRequest;
-use App\Models\User\AcademicEducation;
+use App\Http\Requests\AcademicEducationRequest;
+use App\Models\AcademicEducation;
 
 class AcademicEducationController extends Controller
 {

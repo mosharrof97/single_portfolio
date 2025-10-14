@@ -12,7 +12,7 @@ class AddressDetails extends Model
 {
     use HasFactory, Notifiable,SoftDeletes;
     protected $fillable =[
-        'user_id',
+        'pd_id',
         'present_location',
         'present_village',
         'present_office',

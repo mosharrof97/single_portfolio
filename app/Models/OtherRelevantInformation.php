@@ -8,17 +8,14 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class CareerApplication extends Model
+class OtherRelevantInformation extends Model
 {
-    use HasFactory, Notifiable, SoftDeletes;
+    use HasFactory, Notifiable;
     
     protected $fillable = [
-        'user_id',
-        'objective',
-        'present_salary',
-        'expected_salary',
-        'opt_level',
-        'opt_avail',
+        'pd_id',
+        'career_summary',
+        'keyword',
         'slug',
     ];
 

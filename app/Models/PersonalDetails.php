@@ -12,7 +12,7 @@ class PersonalDetails extends Model
 {
     use HasFactory, Notifiable, SoftDeletes;
     protected $fillable = [
-        'user_id',
+        'pd_id',
         'image',
         'first_name',
         'last_name',

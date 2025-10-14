@@ -2,32 +2,31 @@
 
 namespace App\Models\User;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Publication extends Model
+class Service extends Model
 {
-    use HasFactory, Notifiable, SoftDeletes;
-
+    use HasFactory;
     protected $fillable = [
-        'user_id',
-        'title',
-        'date',
-        'url',
+        'pd_id',        
+        'icon',
+        'name',
         'desc',
+        'service_no',
         'slug',
         'is_active',
+        'status',
     ];
 
-    protected $casts = [
-        'date'=> 'date',
-    ];
+    protected $casts = [];
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
+
 }

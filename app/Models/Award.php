@@ -2,34 +2,32 @@
 
 namespace App\Models\User;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Slider extends Model
+class Award extends Model
 {
-    use HasFactory;
+    use HasFactory, Notifiable, SoftDeletes;
+
     protected $fillable = [
-        'user_id',
-        'image',
+        'pd_id',
         'title',
-        'sub_title',
+        'date',
+        'url',
         'desc',
+        'slug',
         'is_active',
     ];
 
     protected $casts = [
-        'image' => 'string',
-        'title' => 'string',
-        'desc' => 'string',
-        'is_active' => 'boolean', 
+        'date'=> 'date',
     ];
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
-
 }

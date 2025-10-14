@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\User\PersonalDetailsRequest;
-use App\Http\Requests\User\PersonalDetailsUpdateRequest;
-use App\Models\User\PersonalDetails;
+use App\Http\Requests\PersonalDetailsRequest;
+use App\Http\Requests\PersonalDetailsUpdateRequest;
+use App\Models\PersonalDetails;
 
 class PersonalDetailsController extends Controller
 {

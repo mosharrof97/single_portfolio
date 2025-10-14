@@ -7,27 +7,22 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class BlogCategory extends Model
+class SkillDescription extends Model
 {
-    use HasFactory, Notifiable;
+    use HasFactory,Notifiable;
     
     protected $fillable = [
-        'user_id',
-        'category',
+        'pd_id',
+        'description',
         'slug',
         'is_active',
     ];
+
+    protected $casts = [];
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
-
-    public function blog(){
-        return $this->HasMany(UserBlog::class, 'category_id');
-    }
 }
-

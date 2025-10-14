@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User\Slider;
-use App\Models\User\Banner;
+use App\Models\Slider;
+use App\Models\Banner;
 
 class SliderController extends Controller
 {

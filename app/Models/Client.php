@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Client extends Authenticatable
 {
     protected $fillable = [
+        'pd_id',
         'name',
         'username',
         'phone',

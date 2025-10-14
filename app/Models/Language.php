@@ -8,16 +8,21 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class OtherRelevantInformation extends Model
+class Language extends Model
 {
     use HasFactory, Notifiable;
     
     protected $fillable = [
-        'user_id',
-        'career_summary',
-        'keyword',
+        'pd_id',
+        'language',
+        'reading',
+        'writing',
+        'speaking',
         'slug',
+        'is_active',
     ];
+
+    protected $casts=[];
 
     public function user(): BelongsTo
     {

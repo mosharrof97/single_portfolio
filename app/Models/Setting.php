@@ -2,21 +2,24 @@
 
 namespace App\Models\User;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Activities extends Model
+class Setting extends Model
 {
-    use HasFactory,Notifiable;
+    use HasFactory;
 
     protected $fillable = [
-        'user_id',
-        'activities',
-        'slug',
+        'pd_id',
+        'type',
+        'bg_title',
+        'title',
+        'desc',
         'is_active',
+        'status',
     ];
 
     protected $casts = [];
@@ -25,4 +28,6 @@ class Activities extends Model
     {
         return $this->belongsTo(User::class);
     }
+
 }
+

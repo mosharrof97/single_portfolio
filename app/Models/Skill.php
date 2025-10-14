@@ -8,18 +8,23 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Achievement extends Model
+class Skill extends Model
 {
     use HasFactory, Notifiable;
+    
     protected $fillable = [
-        'user_id',
-        'acc_type',
-        'title',
-        'issue_date',
-        'url',
-        'desc',
+        'pd_id',
+        'skill',
+        'progress',
+        'self',
+        'service',
+        'education',
+        'training',
         'slug',
+        'is_active',
     ];
+
+    protected $casts = [];
 
     public function user(): BelongsTo
     {

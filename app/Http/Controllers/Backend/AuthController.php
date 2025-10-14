@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User\Client;
-use App\Models\User\User;
+use App\Models\Client;
+use App\Models\User;
 use App\Http\Requests\Auth\ClientLoginRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;

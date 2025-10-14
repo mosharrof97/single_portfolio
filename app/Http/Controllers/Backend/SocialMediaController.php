@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
-use App\Models\User\SocialMedia;
+use App\Models\SocialMedia;
 
 class SocialMediaController extends Controller
 {

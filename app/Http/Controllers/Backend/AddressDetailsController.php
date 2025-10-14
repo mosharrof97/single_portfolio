@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User\AddressDetails;
+use App\Models\AddressDetails;
 use App\Models\Geocode;
 
 class AddressDetailsController extends Controller

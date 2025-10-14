@@ -6,17 +6,23 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class DisabilityInformation extends Model
+class Training extends Model
 {
     use HasFactory, Notifiable;
     
-    protected $fillable =[
-        'user_id',
-        'isdisability',
-        'disability_id',
-        'document',
-        'cbo_disability_problem',
+    protected $fillable = [
+        'pd_id',
+        'title',
+        'country',
+        'topic',
+        'year',
+        'institute',
+        'duration',
+        'location',
+        'slug',
+        'is_active',
     ];
 
     public function user(): BelongsTo

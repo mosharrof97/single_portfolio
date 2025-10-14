@@ -8,30 +8,26 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Experience extends Model
+class ProfessionalCertification extends Model
 {
     use HasFactory, Notifiable, SoftDeletes;
-    protected $fillable =[
-        'user_id',
-        'title',
-        'company',
-        'business',
-        'position',
-        'department',
-        'from_date',
-        'to_date',
-        'is_continue',
-        'exp_area',
-        'exp_area_year',
+    
+    protected $fillable = [
+        'pd_id',
+        'certification',
+        'institute',
+        'desc',
         'location',
-        'responsibilities',
+        'country',
+        'start_date',
+        'end_date',
         'slug',
         'is_active',
     ];
 
     protected $casts = [
-        'from_date' => 'date',
-        'to_date' => 'date',
+        'start_date'=>'datetime',
+        'end_date'=>'datetime',
     ];
 
     public function user(): BelongsTo

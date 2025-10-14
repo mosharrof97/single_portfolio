@@ -8,16 +8,17 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Award extends Model
+class Project extends Model
 {
     use HasFactory, Notifiable, SoftDeletes;
 
     protected $fillable = [
-        'user_id',
+        'pd_id',
         'title',
         'date',
         'url',
         'desc',
+        'image',
         'slug',
         'is_active',
     ];

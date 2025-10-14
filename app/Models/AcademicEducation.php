@@ -13,7 +13,7 @@ class AcademicEducation extends Model
 {
     use HasFactory, Notifiable;
     protected $fillable = [
-        'user_id',
+        'pd_id',
         'edu_level',
         'exam_title',
         'major_group',

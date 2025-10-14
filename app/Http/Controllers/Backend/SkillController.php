@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User\Skill;
-use App\Models\User\SkillDescription;
-use App\Models\User\Activities;
+use App\Models\Skill;
+use App\Models\SkillDescription;
+use App\Models\Activities;
 
 class SkillController extends Controller
 {

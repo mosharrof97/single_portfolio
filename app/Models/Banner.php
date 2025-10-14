@@ -2,29 +2,29 @@
 
 namespace App\Models\User;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class SocialMedia extends Model
+class Banner extends Model
 {
-    use HasFactory, Notifiable;
-
+    use HasFactory;
     protected $fillable = [
-        'user_id',
-        'name',
-        'icon',
-        'url',
-        'slug',
+        'pd_id',
+        'image',        
         'is_active',
     ];
 
-    protected $casts = [];
+    protected $casts = [
+        'image' => 'string',
+        'is_active' => 'boolean',  
+    ];
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 }
+

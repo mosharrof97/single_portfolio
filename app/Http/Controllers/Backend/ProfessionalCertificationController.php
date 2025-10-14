@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User\ProfessionalCertification;
+use App\Models\ProfessionalCertification;
 
 class ProfessionalCertificationController extends Controller
 {

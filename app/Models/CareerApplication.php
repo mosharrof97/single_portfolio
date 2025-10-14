@@ -8,18 +8,19 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class SkillDescription extends Model
+class CareerApplication extends Model
 {
-    use HasFactory,Notifiable;
+    use HasFactory, Notifiable, SoftDeletes;
     
     protected $fillable = [
-        'user_id',
-        'description',
+        'pd_id',
+        'objective',
+        'present_salary',
+        'expected_salary',
+        'opt_level',
+        'opt_avail',
         'slug',
-        'is_active',
     ];
-
-    protected $casts = [];
 
     public function user(): BelongsTo
     {
