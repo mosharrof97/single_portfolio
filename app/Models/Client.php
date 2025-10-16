@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\User;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -48,6 +48,11 @@ class Client extends Authenticatable
         static::creating(function ($model) {
             $model->slug = generateUniqueSlug($model,$model->name);
         });
+    }
+
+    public function pd(): BelongsTo
+    {
+        return $this->belongsTo(PersonalDetails::class);
     }
 
 }

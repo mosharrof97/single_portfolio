@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\User;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -58,9 +58,9 @@ class Blog extends Model
     //     });
     // }
 
-    public function user(): BelongsTo
+    public function pd(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(PersonalDetails::class);
     }
 
     public function category(): BelongsTo

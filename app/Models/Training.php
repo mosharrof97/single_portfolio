@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\User;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -25,8 +25,8 @@ class Training extends Model
         'is_active',
     ];
 
-    public function user(): BelongsTo
+    public function pd(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(PersonalDetails::class);
     }
 }

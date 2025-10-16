@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\User;
+namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -75,124 +75,124 @@ class User extends Authenticatable
 
 
     
-    /*========== One To One Relation ==========*/
-    public function personal():  HasOne
-    {
-        return $this->hasOne(PersonalDetails::class);
-    }
+    // /*========== One To One Relation ==========*/
+    // public function personal():  HasOne
+    // {
+    //     return $this->hasOne(PersonalDetails::class);
+    // }
 
-    public function address(): HasOne 
-    {
-        return $this->hasOne(AddressDetails::class);
-    }
-
-
-    /*========== One To Many Relation ==========*/
-    public function education(): HasMany
-    {
-        return $this->hasMany(AcademicEducation::class);
-    }
+    // public function address(): HasOne 
+    // {
+    //     return $this->hasOne(AddressDetails::class);
+    // }
 
 
-    public function Banner(): HasOne
-    {
-        return $this->hasOne(UserBanner::class);
-    }
+    // /*========== One To Many Relation ==========*/
+    // public function education(): HasMany
+    // {
+    //     return $this->hasMany(AcademicEducation::class);
+    // }
 
-    public function activities(): HasMany
-    {
-        return $this->hasMany(Activities::class);
-    }
 
-    public function achievement(): HasMany
-    {
-        return $this->hasMany(Achievement::class);
-    }
+    // public function Banner(): HasOne
+    // {
+    //     return $this->hasOne(UserBanner::class);
+    // }
 
-    public function service(): HasMany 
-    {
-        return $this->hasMany(UserService::class);
-    }
+    // public function activities(): HasMany
+    // {
+    //     return $this->hasMany(Activities::class);
+    // }
 
-    public function blog(): HasMany 
-    {
-        return $this->hasMany(UserBlog::class);
-    }
+    // public function achievement(): HasMany
+    // {
+    //     return $this->hasMany(Achievement::class);
+    // }
 
-    public function setting(): HasMany 
-    {
-        return $this->hasMany(UserSetting::class);
-    }
+    // public function service(): HasMany 
+    // {
+    //     return $this->hasMany(UserService::class);
+    // }
 
-    public function slider(): HasMany 
-    {
-        return $this->hasMany(UserSlider::class);
-    }
+    // public function blog(): HasMany 
+    // {
+    //     return $this->hasMany(UserBlog::class);
+    // }
 
-    public function socialMedia(): HasMany 
-    {
-        return $this->hasMany(UserSocialMedia::class);
-    }
+    // public function setting(): HasMany 
+    // {
+    //     return $this->hasMany(UserSetting::class);
+    // }
 
-    public function training(): HasMany 
-    {
-        return $this->hasMany(Training::class);
-    }
+    // public function slider(): HasMany 
+    // {
+    //     return $this->hasMany(UserSlider::class);
+    // }
 
-    public function skillDescription(): HasMany 
-    {
-        return $this->hasMany(SkillDescription::class);
-    }
+    // public function socialMedia(): HasMany 
+    // {
+    //     return $this->hasMany(UserSocialMedia::class);
+    // }
 
-    public function skill(): HasMany 
-    {
-        return $this->hasMany(Skill::class);
-    }
+    // public function training(): HasMany 
+    // {
+    //     return $this->hasMany(Training::class);
+    // }
 
-    public function references(): HasMany 
-    {
-        return $this->hasMany(References::class);
-    }
+    // public function skillDescription(): HasMany 
+    // {
+    //     return $this->hasMany(SkillDescription::class);
+    // }
 
-    public function publication(): HasMany 
-    {
-        return $this->hasMany(Publication::class);
-    }
+    // public function skill(): HasMany 
+    // {
+    //     return $this->hasMany(Skill::class);
+    // }
 
-    public function project(): HasMany 
-    {
-        return $this->hasMany(Project::class);
-    }
+    // public function references(): HasMany 
+    // {
+    //     return $this->hasMany(References::class);
+    // }
 
-    public function certification(): HasMany 
-    {
-        return $this->hasMany(ProfessionalCertification::class);
-    }
+    // public function publication(): HasMany 
+    // {
+    //     return $this->hasMany(Publication::class);
+    // }
 
-    public function otherInfo(): HasMany 
-    {
-        return $this->hasMany(OtherRelevantInformation::class);
-    }
+    // public function project(): HasMany 
+    // {
+    //     return $this->hasMany(Project::class);
+    // }
 
-    public function language(): HasMany 
-    {
-        return $this->hasMany(Language::class);
-    }
+    // public function certification(): HasMany 
+    // {
+    //     return $this->hasMany(ProfessionalCertification::class);
+    // }
 
-    public function experience(): HasMany 
-    {
-        return $this->hasMany(Experience::class);
-    }
+    // public function otherInfo(): HasMany 
+    // {
+    //     return $this->hasMany(OtherRelevantInformation::class);
+    // }
 
-    public function career(): HasMany 
-    {
-        return $this->hasMany(CareerApplication::class);
-    }
+    // public function language(): HasMany 
+    // {
+    //     return $this->hasMany(Language::class);
+    // }
 
-    public function award(): HasMany 
-    {
-        return $this->hasMany(Award::class);
-    }
-    /*========== One To Many Relation ==========*/    
+    // public function experience(): HasMany 
+    // {
+    //     return $this->hasMany(Experience::class);
+    // }
+
+    // public function career(): HasMany 
+    // {
+    //     return $this->hasMany(CareerApplication::class);
+    // }
+
+    // public function award(): HasMany 
+    // {
+    //     return $this->hasMany(Award::class);
+    // }
+    // /*========== One To Many Relation ==========*/    
 
 }

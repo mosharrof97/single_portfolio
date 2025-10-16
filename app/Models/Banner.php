@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\User;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -22,9 +22,9 @@ class Banner extends Model
         'is_active' => 'boolean',  
     ];
 
-    public function user(): BelongsTo
+    public function pd(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(PersonalDetails::class);
     }
 }
 
