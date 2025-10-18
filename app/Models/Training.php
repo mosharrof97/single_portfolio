@@ -13,7 +13,6 @@ class Training extends Model
     use HasFactory, Notifiable;
     
     protected $fillable = [
-        'pd_id',
         'title',
         'country',
         'topic',
@@ -25,8 +24,4 @@ class Training extends Model
         'is_active',
     ];
 
-    public function pd(): BelongsTo
-    {
-        return $this->belongsTo(PersonalDetails::class);
-    }
 }

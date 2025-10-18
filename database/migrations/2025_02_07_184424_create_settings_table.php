@@ -12,8 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('settings', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('pd_id')->constrained('personal_details')->onUpdate('cascade')->onDelete('cascade');
+            $table->id();           
             $table->string('type',200);            
             $table->string('bg_title');
             $table->string('title');

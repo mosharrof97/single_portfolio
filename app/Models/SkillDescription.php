@@ -13,7 +13,6 @@ class SkillDescription extends Model
     use HasFactory,Notifiable;
     
     protected $fillable = [
-        'pd_id',
         'description',
         'slug',
         'is_active',
@@ -21,8 +20,4 @@ class SkillDescription extends Model
 
     protected $casts = [];
 
-    public function pd(): BelongsTo
-    {
-        return $this->belongsTo(PersonalDetails::class);
-    }
 }

@@ -22,8 +22,4 @@ class CareerApplication extends Model
         'slug',
     ];
 
-    public function pd(): BelongsTo
-    {
-        return $this->belongsTo(PersonalDetails::class);
-    }
 }

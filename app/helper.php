@@ -1,9 +1,10 @@
 <?php
 use Illuminate\Support\Str;
-use App\Models\User\User;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User\Service;
-use App\Models\User\Setting;
+use App\Models\Service;
+use App\Models\Setting;
+use App\Models\PersonalDetails;
 
 /**Auth ID**/ 
 function userAuthId(){
@@ -30,34 +31,34 @@ function generateUniqueSlug($model, $name)
 }
 
 function userService($service){
-    $service = UserService::Where('user_id',userAuthId())->where('service_no', $service)->first();
+    $service = Service::where('service_no', $service)->first();
 
     return $service;
 }
 
 function userSetting($type)
 {
-    $setting = UserSetting::Where('user_id',userAuthId())->where('type',$type)->first();
+    $setting = Setting::where('type',$type)->first();
     return $setting;
 }
 
 /**============ User Frontend ==============**/ 
-function user($username){
-    $user = User::where('username', $username)->first();
+function user(){
+    $user = PersonalDetails::first();
 
     return $user;
 }
 
-function userFrontendService($service, $username){
-    $user = user($username);
-    $service = UserService::Where('user_id',$user->id)->where('service_no', $service)->first();
+function userFrontendService($service){
+    $service = Service::where('service_no', $service)->first();
 
     return $service;
 }
 
-function userFrontendSetting($type, $username)
+function userFrontendSetting($type)
 {
-    $user = user($username);
-    $setting = UserSetting::Where('user_id',$user->id)->where('type',$type)->first();
+    $setting = Setting::where('type',$type)->first();
+
+    dd($setting);
     return $setting;
 }

@@ -11,8 +11,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Service extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'pd_id',        
+    protected $fillable = [       
         'icon',
         'name',
         'desc',
@@ -23,10 +22,5 @@ class Service extends Model
     ];
 
     protected $casts = [];
-
-    public function pd(): BelongsTo
-    {
-        return $this->belongsTo(PersonalDetails::class);
-    }
 
 }

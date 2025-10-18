@@ -13,7 +13,6 @@ class References extends Model
 {
     use HasFactory, Notifiable;
     protected $fillable = [
-        'pd_id',
         'name',
         'designation',
         'organization',
@@ -25,9 +24,4 @@ class References extends Model
         'address',
         'slug',
     ];
-
-    public function pd(): BelongsTo
-    {
-        return $this->belongsTo(PersonalDetails::class);
-    }
 }

@@ -12,7 +12,6 @@ class Banner extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'pd_id',
         'image',        
         'is_active',
     ];
@@ -22,9 +21,5 @@ class Banner extends Model
         'is_active' => 'boolean',  
     ];
 
-    public function pd(): BelongsTo
-    {
-        return $this->belongsTo(PersonalDetails::class);
-    }
 }
 

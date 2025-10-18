@@ -13,7 +13,6 @@ class Setting extends Model
     use HasFactory;
 
     protected $fillable = [
-        'pd_id',
         'type',
         'bg_title',
         'title',
@@ -23,11 +22,6 @@ class Setting extends Model
     ];
 
     protected $casts = [];
-
-    public function pd(): BelongsTo
-    {
-        return $this->belongsTo(PersonalDetails::class);
-    }
 
 }
 

@@ -6,15 +6,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Slider;
-use App\Models\Slider;
-use App\Models\Slider;
-use App\Models\Slider;
-use App\Models\Slider;
-use App\Models\Slider;
-use App\Models\Slider;
-use App\Models\Slider;
-use App\Models\Slider;
-use App\Models\Slider;
+// use App\Models\Slider;
+// use App\Models\Slider;
+// use App\Models\Slider;
+// use App\Models\Slider;
+// use App\Models\Slider;
+// use App\Models\Slider;
+// use App\Models\Slider;
+// use App\Models\Slider;
+// use App\Models\Slider;
 
 class HomeController extends Controller
 {

@@ -13,7 +13,6 @@ class SocialMedia extends Model
     use HasFactory, Notifiable;
 
     protected $fillable = [
-        'pd_id',
         'name',
         'icon',
         'url',
@@ -23,8 +22,4 @@ class SocialMedia extends Model
 
     protected $casts = [];
 
-    public function pd(): BelongsTo
-    {
-        return $this->belongsTo(PersonalDetails::class);
-    }
 }

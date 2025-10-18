@@ -70,12 +70,12 @@
             <div class="row justify-content-center pb-md-5">
                 <div class="col-md-10 heading-section text-center ftco-animate">
                     <h1 class="big big-2">
-                        {{ userFrontendSetting('about_title_desc', $user->username) !== null ? userFrontendSetting('about_title_desc', $user->username)->bg_title : 'Resume' }}
+                        {{ userFrontendSetting('about_title_desc') !== null ? userFrontendSetting('about_title_desc')->bg_title : 'Resume' }}
                     </h1>
                     <h2 class="mb-4">
-                        {{ userFrontendSetting('about_title_desc', $user->username) !== null ? userFrontendSetting('about_title_desc', $user->username)->title : 'Resume' }}
+                        {{ userFrontendSetting('about_title_desc') !== null ? userFrontendSetting('about_title_desc')->title : 'Resume' }}
                     </h2>
-                    <p>{{ userFrontendSetting('about_title_desc', $user->username) !== null ? userFrontendSetting('about_title_desc', $user->username)->desc : 'A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.' }}
+                    <p>{{ userFrontendSetting('about_title_desc') !== null ? userFrontendSetting('about_title_desc')->desc : 'A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.' }}
                     </p>
                 </div>
             </div>
@@ -139,12 +139,12 @@
             <div class="row justify-content-center pb-md-5">
                 <div class="col-md-10 heading-section text-center ftco-animate">
                     <h1 class="big big-2">
-                        {{ userFrontendSetting('resume_title_desc', $user->username) !== null ? userFrontendSetting('resume_title_desc', $user->username)->bg_title : 'Resume' }}
+                        {{ userFrontendSetting('resume_title_desc') !== null ? userFrontendSetting('resume_title_desc')->bg_title : 'Resume' }}
                     </h1>
                     <h2 class="mb-4">
-                        {{ userFrontendSetting('resume_title_desc', $user->username) !== null ? userFrontendSetting('resume_title_desc', $user->username)->title : 'Resume' }}
+                        {{ userFrontendSetting('resume_title_desc') !== null ? userFrontendSetting('resume_title_desc')->title : 'Resume' }}
                     </h2>
-                    <p>{{ userFrontendSetting('resume_title_desc', $user->username) !== null ? userFrontendSetting('resume_title_desc', $user->username)->desc : 'A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.' }}
+                    <p>{{ userFrontendSetting('resume_title_desc') !== null ? userFrontendSetting('resume_title_desc')->desc : 'A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.' }}
                     </p>
                 </div>
             </div>
@@ -237,12 +237,12 @@
             <div class="row justify-content-center py-5 mt-5">
                 <div class="col-md-12 heading-section text-center ftco-animate">
                     <h1 class="big big-2">
-                        {{ userFrontendSetting('service_title_desc', $user->username) !== null ? userFrontendSetting('service_title_desc', $user->username)->bg_title : 'Services' }}
+                        {{ userFrontendSetting('service_title_desc') !== null ? userFrontendSetting('service_title_desc')->bg_title : 'Services' }}
                     </h1>
                     <h2 class="mb-4">
-                        {{ userFrontendSetting('service_title_desc', $user->username) !== null ? userFrontendSetting('service_title_desc', $user->username)->title : 'Services' }}
+                        {{ userFrontendSetting('service_title_desc') !== null ? userFrontendSetting('service_title_desc')->title : 'Services' }}
                     </h2>
-                    <p>{{ userFrontendSetting('service_title_desc', $user->username) !== null ? userFrontendSetting('service_title_desc', $user->username)->desc : 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia' }}
+                    <p>{{ userFrontendSetting('service_title_desc') !== null ? userFrontendSetting('service_title_desc')->desc : 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia' }}
                     </p>
                 </div>
             </div>
@@ -254,8 +254,8 @@
                             {{-- <i class="flaticon-analysis"></i> --}}
                         </span>
                         <div class="desc mb-3">
-                            <h5 class="">{{ userFrontendService('service_1', $user->username)->name }}</h5>
-                            <p>{{ userFrontendService('service_1', $user->username)->desc }}</p>
+                            <h5 class="">{{ userFrontendService('service_1')->name }}</h5>
+                            <p>{{ userFrontendService('service_1')->desc }}</p>
                         </div>
                     </div>
                 </div>
@@ -266,8 +266,8 @@
                         </span>
                         <div class="desc mb-3">
                             <h5 class="">
-                                {{ userFrontendService('service_2', $user->username)->name ?? 'Phtography' }}</h5>
-                            <p>{{ userFrontendService('service_2', $user->username)->desc ?? 'I have knowledge in designing Entity-Relationship (ER) diagrams for databases.' }}
+                                {{ userFrontendService('service_2')->name ?? 'Phtography' }}</h5>
+                            <p>{{ userFrontendService('service_2')->desc ?? 'I have knowledge in designing Entity-Relationship (ER) diagrams for databases.' }}
                             </p>
                         </div>
                     </div>
@@ -279,8 +279,8 @@
                         </span>
                         <div class="desc mb-3">
                             <h5 class="">
-                                {{ userFrontendService('service_3', $user->username)->name ?? 'Web Developer' }}</h5>
-                            <p>{{ userFrontendService('service_3', $user->username)->desc ?? 'I have knowledge in designing Entity-Relationship (ER) diagrams for databases.' }}
+                                {{ userFrontendService('service_3')->name ?? 'Web Developer' }}</h5>
+                            <p>{{ userFrontendService('service_3')->desc ?? 'I have knowledge in designing Entity-Relationship (ER) diagrams for databases.' }}
                             </p>
                         </div>
                     </div>
@@ -293,8 +293,8 @@
                         </span>
                         <div class="desc mb-3">
                             <h5 class="">
-                                {{ userFrontendService('service_4', $user->username)->name ?? 'App Developing' }}</h5>
-                            <p>{{ userFrontendService('service_4', $user->username)->desc ?? 'I have knowledge in designing Entity-Relationship (ER) diagrams for databases.' }}
+                                {{ userFrontendService('service_4')->name ?? 'App Developing' }}</h5>
+                            <p>{{ userFrontendService('service_4')->desc ?? 'I have knowledge in designing Entity-Relationship (ER) diagrams for databases.' }}
                             </p>
                         </div>
                     </div>
@@ -305,9 +305,9 @@
                             <i class="flaticon-flasks"></i>
                         </span>
                         <div class="desc mb-3">
-                            <h5 class="">{{ userFrontendService('service_5', $user->username)->name ?? 'Branding' }}
+                            <h5 class="">{{ userFrontendService('service_5')->name ?? 'Branding' }}
                             </h5>
-                            <p>{{ userFrontendService('service_5', $user->username)->desc ?? 'I have knowledge in designing Entity-Relationship (ER) diagrams for databases.' }}
+                            <p>{{ userFrontendService('service_5')->desc ?? 'I have knowledge in designing Entity-Relationship (ER) diagrams for databases.' }}
                             </p>
                         </div>
                     </div>
@@ -319,8 +319,8 @@
                         </span>
                         <div class="desc mb-3">
                             <h5 class="">
-                                {{ userFrontendService('service_6', $user->username)->name ?? 'Product Strategy' }}</h5>
-                            <p>{{ userFrontendService('service_6', $user->username)->desc ?? 'I have knowledge in designing Entity-Relationship (ER) diagrams for databases.' }}
+                                {{ userFrontendService('service_6')->name ?? 'Product Strategy' }}</h5>
+                            <p>{{ userFrontendService('service_6')->desc ?? 'I have knowledge in designing Entity-Relationship (ER) diagrams for databases.' }}
                             </p>
                         </div>
                     </div>
@@ -336,12 +336,12 @@
             <div class="row justify-content-center pb-5">
                 <div class="col-md-12 heading-section text-center ftco-animate">
                     <h1 class="big big-2">
-                        {{ userFrontendSetting('skill_title_desc', $user->username) !== null ? userFrontendSetting('skill_title_desc', $user->username)->bg_title : 'Skills' }}
+                        {{ userFrontendSetting('skill_title_desc') !== null ? userFrontendSetting('skill_title_desc')->bg_title : 'Skills' }}
                     </h1>
                     <h2 class="mb-4">
-                        {{ userFrontendSetting('skill_title_desc', $user->username) !== null ? userFrontendSetting('skill_title_desc', $user->username)->title : 'My Skills' }}
+                        {{ userFrontendSetting('skill_title_desc') !== null ? userFrontendSetting('skill_title_desc')->title : 'My Skills' }}
                     </h2>
-                    <p>{{ userFrontendSetting('skill_title_desc', $user->username) !== null ? userFrontendSetting('skill_title_desc', $user->username)->desc : 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia' }}
+                    <p>{{ userFrontendSetting('skill_title_desc') !== null ? userFrontendSetting('skill_title_desc')->desc : 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia' }}
                     </p>
                 </div>
             </div>
@@ -440,12 +440,12 @@
             <div class="row justify-content-center pb-5">
                 <div class="col-md-12 heading-section text-center ftco-animate">
                     <h1 class="big big-2">
-                        {{ userFrontendSetting('project_title_desc', $user->username) !== null ? userFrontendSetting('project_title_desc', $user->username)->bg_title : 'Projects' }}
+                        {{ userFrontendSetting('project_title_desc') !== null ? userFrontendSetting('project_title_desc')->bg_title : 'Projects' }}
                     </h1>
                     <h2 class="mb-4">
-                        {{ userFrontendSetting('project_title_desc', $user->username) !== null ? userFrontendSetting('project_title_desc', $user->username)->title : 'Our Projects' }}
+                        {{ userFrontendSetting('project_title_desc') !== null ? userFrontendSetting('project_title_desc')->title : 'Our Projects' }}
                     </h2>
-                    <p>{{ userFrontendSetting('project_title_desc', $user->username) !== null ? userFrontendSetting('project_title_desc', $user->username)->desc : 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia' }}
+                    <p>{{ userFrontendSetting('project_title_desc') !== null ? userFrontendSetting('project_title_desc')->desc : 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia' }}
                     </p>
                 </div>
             </div>
@@ -549,12 +549,12 @@
             <div class="row justify-content-center mb-5 pb-5">
                 <div class="col-md-7 heading-section text-center ftco-animate">
                     <h1 class="big big-2">
-                        {{ userFrontendSetting('blog_title_desc', $user->username) !== null ? userFrontendSetting('blog_title_desc', $user->username)->bg_title : 'Blogs' }}
+                        {{ userFrontendSetting('blog_title_desc') !== null ? userFrontendSetting('blog_title_desc')->bg_title : 'Blogs' }}
                     </h1>
                     <h2 class="mb-4">
-                        {{ userFrontendSetting('blog_title_desc', $user->username) !== null ? userFrontendSetting('blog_title_desc', $user->username)->title : 'Our Blogs' }}
+                        {{ userFrontendSetting('blog_title_desc') !== null ? userFrontendSetting('blog_title_desc')->title : 'Our Blogs' }}
                     </h2>
-                    <p>{{ userFrontendSetting('blog_title_desc', $user->username) !== null ? userFrontendSetting('blog_title_desc', $user->username)->desc : 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia' }}
+                    <p>{{ userFrontendSetting('blog_title_desc') !== null ? userFrontendSetting('blog_title_desc')->desc : 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia' }}
                     </p>
                 </div>
             </div>
@@ -704,9 +704,9 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-7 ftco-animate text-center">
-                    <h2>{{ userFrontendSetting('hireme_title_desc', $user->username) !== null ? userFrontendSetting('hireme_title_desc', $user->username)->title : "I'm Available for freelancing" }}
+                    <h2>{{ userFrontendSetting('hireme_title_desc') !== null ? userFrontendSetting('hireme_title_desc')->title : "I'm Available for freelancing" }}
                     </h2>
-                    <p>{{ userFrontendSetting('hireme_title_desc', $user->username) !== null ? userFrontendSetting('hireme_title_desc', $user->username)->desc : 'A small river named Duden flows by their place and supplies it with the necessary regelialia.' }}
+                    <p>{{ userFrontendSetting('hireme_title_desc') !== null ? userFrontendSetting('hireme_title_desc')->desc : 'A small river named Duden flows by their place and supplies it with the necessary regelialia.' }}
                     </p>
                     <p class="mb-0"><a href="#" class="btn btn-primary py-3 px-5">Hire me</a></p>
                 </div>
@@ -722,12 +722,12 @@
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-7 heading-section text-center ftco-animate">
                     <h1 class="big big-2">
-                        {{ userFrontendSetting('contact_title_desc', $user->username) !== null ? userFrontendSetting('contact_title_desc', $user->username)->bg_title : 'Contact' }}
+                        {{ userFrontendSetting('contact_title_desc') !== null ? userFrontendSetting('contact_title_desc')->bg_title : 'Contact' }}
                     </h1>
                     <h2 class="mb-4">
-                        {{ userFrontendSetting('contact_title_desc', $user->username) !== null ? userFrontendSetting('contact_title_desc', $user->username)->title : 'Contact Me' }}
+                        {{ userFrontendSetting('contact_title_desc') !== null ? userFrontendSetting('contact_title_desc')->title : 'Contact Me' }}
                     </h2>
-                    <p>{{ userFrontendSetting('contact_title_desc', $user->username) !== null ? userFrontendSetting('contact_title_desc', $user->username)->desc : 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia' }}
+                    <p>{{ userFrontendSetting('contact_title_desc') !== null ? userFrontendSetting('contact_title_desc')->desc : 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia' }}
                     </p>
                 </div>
             </div>

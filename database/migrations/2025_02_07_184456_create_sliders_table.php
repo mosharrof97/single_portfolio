@@ -12,8 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sliders', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('pd_id')->constrained('personal_details')->onUpdate('cascade')->onDelete('cascade');
+            $table->id();           
             $table->string('image'); 
             $table->string('title'); 
             $table->string('sub_title'); 

@@ -12,7 +12,6 @@ class Experience extends Model
 {
     use HasFactory, Notifiable, SoftDeletes;
     protected $fillable =[
-        'pd_id',
         'title',
         'company',
         'business',
@@ -33,9 +32,4 @@ class Experience extends Model
         'from_date' => 'date',
         'to_date' => 'date',
     ];
-
-    public function pd(): BelongsTo
-    {
-        return $this->belongsTo(PersonalDetails::class);
-    }
 }

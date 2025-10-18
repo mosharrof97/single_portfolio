@@ -2,57 +2,25 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Client extends Authenticatable
+class Client extends Model
 {
-    protected $fillable = [
-        'pd_id',
+    use HasFactory, SoftDeletes;
+
+     protected $fillable = [
         'name',
-        'username',
+        'address',
         'phone',
         'email',
-        'password',
+        'project',
+        'order_date',
+        'delivery_date',
+        'logo',
         'slug',
         'is_active',
     ];
-
-
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
-
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
-    protected function casts(): array
-    {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
-    }
-
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::creating(function ($model) {
-            $model->slug = generateUniqueSlug($model,$model->name);
-        });
-    }
-
-    public function pd(): BelongsTo
-    {
-        return $this->belongsTo(PersonalDetails::class);
-    }
-
 }

@@ -13,7 +13,6 @@ class AcademicEducation extends Model
 {
     use HasFactory, Notifiable;
     protected $fillable = [
-        'pd_id',
         'edu_level',
         'exam_title',
         'major_group',
@@ -42,8 +41,5 @@ class AcademicEducation extends Model
     //     return $this->hasMany(Comment::class, 'foreign_key', 'local_key');
     // }
 
-    public function pd(): BelongsTo
-    {
-        return $this->belongsTo(PersonalDetails::class);
-    }
+
 }

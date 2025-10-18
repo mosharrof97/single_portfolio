@@ -12,8 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('achievements', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('pd_id')->constrained('personal_details')->onUpdate('cascade')->onDelete('cascade');
+            $table->id();           
             $table->timestamps();
             $table->softDeletes();
         });

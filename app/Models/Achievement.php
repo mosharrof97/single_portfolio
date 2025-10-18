@@ -12,7 +12,6 @@ class Achievement extends Model
 {
     use HasFactory, Notifiable;
     protected $fillable = [
-        'pd_id',
         'acc_type',
         'title',
         'issue_date',
@@ -21,8 +20,4 @@ class Achievement extends Model
         'slug',
     ];
 
-    public function pd(): BelongsTo
-    {
-        return $this->belongsTo(PersonalDetails::class);
-    }
 }

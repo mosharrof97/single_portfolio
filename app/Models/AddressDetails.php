@@ -12,7 +12,6 @@ class AddressDetails extends Model
 {
     use HasFactory, Notifiable,SoftDeletes;
     protected $fillable =[
-        'pd_id',
         'present_location',
         'present_village',
         'present_office',
@@ -30,8 +29,4 @@ class AddressDetails extends Model
         'is_active',
     ];
 
-    public function pd(): BelongsTo
-    {
-        return $this->belongsTo(PersonalDetails::class);
-    }
 }

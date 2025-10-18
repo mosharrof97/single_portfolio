@@ -15,16 +15,11 @@ class BlogCategory extends Model
     use HasFactory, Notifiable;
     
     protected $fillable = [
-        'pd_id',
         'category',
         'slug',
         'is_active',
     ];
 
-    public function pd(): BelongsTo
-    {
-        return $this->belongsTo(PersonalDetails::class);
-    }
 
     public function blog(){
         return $this->HasMany(UserBlog::class, 'category_id');

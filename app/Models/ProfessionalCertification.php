@@ -13,7 +13,6 @@ class ProfessionalCertification extends Model
     use HasFactory, Notifiable, SoftDeletes;
     
     protected $fillable = [
-        'pd_id',
         'certification',
         'institute',
         'desc',
@@ -30,8 +29,4 @@ class ProfessionalCertification extends Model
         'end_date'=>'datetime',
     ];
 
-    public function pd(): BelongsTo
-    {
-        return $this->belongsTo(PersonalDetails::class);
-    }
 }

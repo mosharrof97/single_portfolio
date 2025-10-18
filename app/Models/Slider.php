@@ -12,7 +12,6 @@ class Slider extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'pd_id',
         'image',
         'title',
         'sub_title',
@@ -26,10 +25,5 @@ class Slider extends Model
         'desc' => 'string',
         'is_active' => 'boolean', 
     ];
-
-    public function pd(): BelongsTo
-    {
-        return $this->belongsTo(PersonalDetails::class);
-    }
 
 }

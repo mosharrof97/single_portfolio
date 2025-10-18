@@ -13,14 +13,9 @@ class OtherRelevantInformation extends Model
     use HasFactory, Notifiable;
     
     protected $fillable = [
-        'pd_id',
         'career_summary',
         'keyword',
         'slug',
     ];
 
-    public function pd(): BelongsTo
-    {
-        return $this->belongsTo(PersonalDetails::class);
-    }
 }

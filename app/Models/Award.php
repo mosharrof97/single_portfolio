@@ -13,7 +13,6 @@ class Award extends Model
     use HasFactory, Notifiable, SoftDeletes;
 
     protected $fillable = [
-        'pd_id',
         'title',
         'date',
         'url',
@@ -26,8 +25,4 @@ class Award extends Model
         'date'=> 'date',
     ];
 
-    public function pd(): BelongsTo
-    {
-        return $this->belongsTo(PersonalDetails::class);
-    }
 }

@@ -13,7 +13,6 @@ class Language extends Model
     use HasFactory, Notifiable;
     
     protected $fillable = [
-        'pd_id',
         'language',
         'reading',
         'writing',
@@ -24,8 +23,4 @@ class Language extends Model
 
     protected $casts=[];
 
-    public function pd(): BelongsTo
-    {
-        return $this->belongsTo(PersonalDetails::class);
-    }
 }

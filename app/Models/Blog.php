@@ -17,7 +17,6 @@ class Blog extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'pd_id',
         'category_id',
         'title',
         'desc',
@@ -58,13 +57,4 @@ class Blog extends Model
     //     });
     // }
 
-    public function pd(): BelongsTo
-    {
-        return $this->belongsTo(PersonalDetails::class);
-    }
-
-    public function category(): BelongsTo
-    {
-        return $this->belongsTo(UserBlogCategory::class,'category_id');
-    }
 }
