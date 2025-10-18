@@ -23,7 +23,7 @@ class UserMiddleware
         //     ->with('url.intended', $request->fullUrl());
         // }
 
-        if (!Auth::guard('user')->check()) {
+        if (!Auth::guard('web')->check()) {
             session()->put('url.intended', $request->fullUrl());
 
             return redirect()->route('login')

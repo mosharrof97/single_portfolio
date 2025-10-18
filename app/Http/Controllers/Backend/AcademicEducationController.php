@@ -23,8 +23,9 @@ class AcademicEducationController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(AcademicEducationRequest $request)
+    public function store(Request $request)
     {
+        dd($request->all());
         $isForeignInst = $request->has('is_foreign_inst') ? (bool) $request->input('is_foreign_inst') : 0;
         $data = [
             'edu_level' => $request->edu_level,

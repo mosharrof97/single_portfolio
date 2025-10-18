@@ -107,7 +107,7 @@ class BlogController extends Controller
                 return redirect()->route('blog')->with('error', 'Something is Wrong!');
             }
             
-            $imageName ='';
+            $imageNamePath ='';
             if($request->hasFile('image')){
                 if (!empty($blog->image) && file_exists($blog->image)) {
                     unlink($blog->image);
@@ -120,7 +120,7 @@ class BlogController extends Controller
                 $imageNamePath = 'assets/img/blog/'.$imageName;
 
             }else{
-                $imageName = $request->old_image;
+                $imageNamePath = $request->old_image;
             }
     
             $data = [

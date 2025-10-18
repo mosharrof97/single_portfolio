@@ -53,8 +53,7 @@
                     </div>
                 </div>
                 <div class="" id="applicationEdit" style="display: none;">
-                    <form class="form" action="{{ route('career.application.update') }}" id=""
-                        method="POST">
+                    <form class="form" action="{{ route('career.application.update') }}" id="" method="POST">
                         @csrf
                         @method('put')
                         <div class="row">
@@ -182,8 +181,7 @@
         @else
             <div class="card-body">
                 <div class="">
-                    <form class="form" action="{{ route('career.application.update') }}" id=""
-                        method="POST">
+                    <form class="form" action="{{ route('career.application') }}" id="" method="POST">
                         @csrf
                         <div class="row">
                             <div class="col-md-12 form-group">

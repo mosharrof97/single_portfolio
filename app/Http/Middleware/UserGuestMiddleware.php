@@ -17,7 +17,7 @@ class UserGuestMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         // dd($request->all());
-        if (Auth::guard('user')->check()) {
+        if (Auth::guard('web')->check()) {
             
             return redirect()->route('dashboard')
                 ->with('info', 'You are already logged in.');

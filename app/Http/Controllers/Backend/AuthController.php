@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Client;
 use App\Models\User;
-use App\Http\Requests\Auth\ClientLoginRequest;
+use App\Http\Requests\Auth\UserLoginRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
@@ -24,7 +24,7 @@ class AuthController extends Controller
     /**
      * Handle an incoming authentication request.
      */
-    public function store(ClientLoginRequest $request): RedirectResponse
+    public function store(UserLoginRequest $request): RedirectResponse
     {
         $request->authenticate();
         $request->session()->regenerate();
@@ -37,7 +37,7 @@ class AuthController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
-        Auth::guard('user')->logout();
+        Auth::guard('web')->logout();
 
         $request->session()->invalidate();
 

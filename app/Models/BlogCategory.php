@@ -22,7 +22,7 @@ class BlogCategory extends Model
 
 
     public function blog(){
-        return $this->HasMany(UserBlog::class, 'category_id');
+        return $this->HasMany(Blog::class, 'category_id');
     }
 }
 

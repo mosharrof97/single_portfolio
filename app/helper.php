@@ -59,6 +59,5 @@ function userFrontendSetting($type)
 {
     $setting = Setting::where('type',$type)->first();
 
-    dd($setting);
     return $setting;
 }

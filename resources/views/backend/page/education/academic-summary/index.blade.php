@@ -1068,14 +1068,14 @@
                                     </div>
                                     <div class="education-type form-group col-md-6">
                                         <label for="exam_title">Exam/Degree Title<span title="Required"
-                                                class="text-dangre">*</span>
-                                            @error('exam_title')
-                                                <span class="text-danger" id="">{{ $message }}</span>
-                                            @enderror
+                                                class="text-dangre">*</span>                                            
                                         </label>
+                                        @error('exam_title')
+                                            <span class="text-danger" id="">{{ $message }}</span>
+                                        @enderror
                                         <div class="row">
                                             <div class="col-md-12" id="secondaryEduType" style="display:none;">
-                                                <select class="form-control" name="exam_title" id="exam_title" disabled>
+                                                <select class="form-control" name="exam_title" disabled>
                                                     <option value="SSC">SSC</option>
                                                     <option value="O Level">O Level</option>
                                                     <option value="Dakhil (Madrasah)">Dakhil (Madrasah)</option>
@@ -1085,7 +1085,7 @@
                                             </div>
 
                                             <div class="col-md-12" id="higher_secondaryEduType" style="display:none;">
-                                                <select class="form-control" name="exam_title" id="exam_title" disabled>
+                                                <select class="form-control" name="exam_title" disabled>
                                                     <option value="HSC">HSC</option>
                                                     <option value="Alim (Madrasah)">Alim (Madrasah)</option>
                                                     <option value="HSC (Vocational)">HSC (Vocational)</option>
@@ -1094,7 +1094,7 @@
                                             </div>
 
                                             <div class="" id="diplomaEduType" style="display:none;">
-                                                <select class="form-control" name="exam_title" id="exam_title"
+                                                <select class="form-control" name="exam_title"
                                                     onchange="DisableOtherEduType();" disabled>
                                                     <option value="Diploma in Engineering">Diploma in Engineering</option>
                                                     <option value="Diploma in Medical Technology">Diploma in Medical
@@ -1145,7 +1145,7 @@
                                             </div>
 
                                             <div class="" id="honorsEduType" style="display:none;">
-                                                <select class="form-control" name="exam_title" id="exam_title" disabled>
+                                                <select class="form-control" name="exam_title" disabled>
                                                     <option value="Bachelor of Science (BSc)">Bachelor of Science (BSc)
                                                     </option>
                                                     <option value="Bachelor of Arts (BA)">Bachelor of Arts (BA)</option>
@@ -1198,7 +1198,7 @@
                                             </div>
 
                                             <div class="col-md-12" id="masterEduType" style="display:none;">
-                                                <select class="form-control" name="exam_title" id="exam_title" disabled>
+                                                <select class="form-control" name="exam_title" disabled>
                                                     <option value="Master of Science (MSc)">Master of Science (MSc)
                                                     </option>
                                                     <option value="Master of Arts (MA)">Master of Arts (MA)</option>
@@ -1527,7 +1527,7 @@
                 if (edu_level === 'Secondary') {
                     $('#secondaryEduType').show().find('input, select').prop('disabled', false);
                     $('#showBoard').show().find('input, select').prop('disabled', false);
-                } else if (edu_level === 'Higher Secondary') {
+                } else if (edu_level === 'Higher Secondary') {.
                     $('#higher_secondaryEduType').show().find('input, select').prop('disabled', false);
                     $('#showBoard').show().find('input, select').prop('disabled', false);
                 } else if (edu_level === 'Diploma') {

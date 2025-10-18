@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 
-class ClientLoginRequest extends FormRequest
+class UserLoginRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -52,7 +52,7 @@ class ClientLoginRequest extends FormRequest
         $login = $this->input('login');
         $fieldType = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'phone';
 
-        if (! Auth::guard('user')->attempt([$fieldType => $login, 'password' => $this->input('password')], $this->boolean('remember'))) {
+        if (! Auth::guard('web')->attempt([$fieldType => $login, 'password' => $this->input('password')], $this->boolean('remember'))) {
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([

@@ -57,4 +57,8 @@ class Blog extends Model
     //     });
     // }
 
+    public function category()
+    {
+        return $this->BelongsTo(BlogCategory::class);
+    }
 }

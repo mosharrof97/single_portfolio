@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\RegisteredController;
-use App\Http\Controllers\Backend\UserDashboardController;
+use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\PersonalDetailsController;
 use App\Http\Controllers\Backend\AddressDetailsController;
 use App\Http\Controllers\Backend\CareerApplicationController;
@@ -29,8 +29,8 @@ Route::middleware('userguest')->group(function () {
     // Route::prefix('user')->group(function () {
         Route::get('/login', [AuthController::class, 'index'])->name('login');
         Route::post('/login', [AuthController::class, 'store']);
-        Route::get('/signup', [RegisteredController::class, 'create'])->name('register');
-        Route::post('/signup', [RegisteredController::class, 'store']);
+        // Route::get('/signup', [RegisteredController::class, 'create'])->name('register');
+        // Route::post('/signup', [RegisteredController::class, 'store']);
         
     // });
     
@@ -38,7 +38,7 @@ Route::middleware('userguest')->group(function () {
 
 Route::middleware('user')->group(function () {
     Route::prefix('user')->group(function () {
-        Route::get('/dashboard',[UserDashboardController::class, 'index'])->name('dashboard');
+        Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
         
         Route::prefix('personal-details')->group(function () {            
                 Route::get('/', [PersonalDetailsController::class,'index'])->name('personal.details');
