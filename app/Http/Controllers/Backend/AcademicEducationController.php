@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\AcademicEducationRequest;
 use App\Models\AcademicEducation;
+use App\Models\Degree;
+use App\Models\Section;
+use App\Models\Board;
 
 class AcademicEducationController extends Controller
 {
@@ -15,8 +18,16 @@ class AcademicEducationController extends Controller
     public function index()
     {
         $educations = AcademicEducation::orderBy('id','asc')->get();
-        // dd($education );
-        return view('backend.page.education.academic-summary.index', compact('educations'));
+        $degree = Degree::get();
+        $boards = Board::orderBy('name','asc')->get();
+
+        return view('backend.page.education.academic-summary.index', compact(['educations','degree','boards']));
+    }
+
+    public function degree(Request $request){
+        $degree = Degree::where('name', $request->degree)->firstOrFail();
+        $section = Section::where('degree_id',$degree->id)->get();
+        return response()->json($section, 200,);
     }
 
 
@@ -25,7 +36,6 @@ class AcademicEducationController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
         $isForeignInst = $request->has('is_foreign_inst') ? (bool) $request->input('is_foreign_inst') : 0;
         $data = [
             'edu_level' => $request->edu_level,

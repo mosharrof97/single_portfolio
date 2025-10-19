@@ -4,8 +4,8 @@
     {{-- ============ Slider ============= --}}
     <section id="home-section" class="hero">
         <div class="home-slider  owl-carousel">
-            @if (!empty($user->slider) && $user->slider->count())
-                @foreach ($user->slider as $data)
+            @if (!empty($slider) && $slider->count())
+                @foreach ($slider as $data)
                     <div class="slider-item ">
                         <div class="overlay"></div>
                         <div class="container">
@@ -85,7 +85,7 @@
                     <div class="img-about img d-flex align-items-stretch">
                         <div class="overlay"></div>
                         <div class="img d-flex align-self-stretch align-items-center"
-                            style="background-image:url('{{ asset('assets/img/personal/' . $user->personal->image) }}');">
+                            style="background-image:url('{{ asset('assets/img/personal/' . $personal->image) }}');">
                         </div>
                     </div>
                 </div>
@@ -102,16 +102,26 @@
                             <li class="d-flex" style="color: rgb(136 137 138)"><span>Phone: </span> <span>{{ $user->personal ? $user->personal->mobile : '+8801700-000000'}}</span></li> --}}
 
                                 <li><span>Birthday</span> :
-                                    <span>{{ $user->personal ? $user->personal->date_of_birth->format('d-M-Y') : '10-jan-2000' }}</span>
+                                    <span>{{ $personal ? $personal->date_of_birth->format('d-M-Y') : '10-jan-2000' }}</span>
                                 </li>
                                 <li><span>Phone</span> :
-                                    <span>{{ $user->personal ? $user->personal->mobile : '+8801700-000000' }}</span></li>
-                                <li><span>Email</span> :
-                                    <span>{{ $user->personal ? $user->personal->email : 'test@exmple.com' }}</span></li>
-                                <li><span>From</span> :
-                                    <span>{{ $user->address ? $user->address->present_village . ', ' . $user->address->present_office . ', ' . $user->address->present_thana . ', ' . $user->address->present_district . ', ' . $user->address->present_country : 'Dhaka, Bangladesh' }}</span>
+                                    <span>{{ $personal ? $personal->mobile : '+8801700-000000' }}</span>
                                 </li>
-                                <li><span>Language</span> : <span>{{ $user->language ? $user->language->language :'Bangla, English' }}</span></li>
+                                <li><span>Email</span> :
+                                    <span>{{ $personal ? $personal->email : 'test@exmple.com' }}</span>
+                                </li>
+                                <li><span>From</span> :
+                                    <span>{{ $address ? $address->present_village . ', ' . $address->present_office . ', ' . $address->present_thana . ', ' . $address->present_district . ', ' . $address->present_country : 'Dhaka, Bangladesh' }}</span>
+                                </li>
+
+                                <li><span>Language</span> :
+                                    @forelse ($language as $lang)
+                                        <span>{{ $lang->language }}, </span>
+                                    @empty
+                                        <span>Bangla, English</span>
+                                    @endforelse
+
+                                </li>
                                 <li><span>Full Time Job</span> : <span>Available</span></li>
                                 <li><span>Freelance</span> : <span>Available</span></li>
 
@@ -121,7 +131,7 @@
                     <div class="counter-wrap ftco-animate d-flex mt-md-3">
                         <div class="text">
                             <p class="mb-4">
-                                <span class="number" data-number="{{ $user->project->count() }}">0</span>
+                                <span class="number" data-number="{{ $project->count() }}">0</span>
                                 <span>Project complete</span>
                             </p>
                             <p><a href="#" class="btn btn-primary py-md-3 py-1 px-3">Download CV</a></p>
@@ -150,8 +160,8 @@
             </div>
             <div class="row">
 
-                @if (!empty($user->education))
-                    @foreach ($user->education as $data)
+                @if (!empty($education))
+                    @foreach ($education as $data)
                         <div class="col-md-6">
                             <div class="resume-wrap ftco-animate">
                                 <span class="date">{{ $data->edu_level }}</span>
@@ -254,8 +264,9 @@
                             {{-- <i class="flaticon-analysis"></i> --}}
                         </span>
                         <div class="desc mb-3">
-                            <h5 class="">{{ userFrontendService('service_1')->name }}</h5>
-                            <p>{{ userFrontendService('service_1')->desc }}</p>
+                            <h5 class="">{{ userFrontendService('service_1')->name ?? 'Phtography' }}</h5>
+                            <p>{{ userFrontendService('service_1')->desc ?? 'I have knowledge in designing Entity-Relationship (ER) diagrams for databases.' }}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -346,8 +357,8 @@
                 </div>
             </div>
             <div class="row">
-                @if (!empty($user->skill) && $user->skill->count())
-                    @foreach ($user->skill as $data)
+                @if (!empty($skill) && $skill->count())
+                    @foreach ($skill as $data)
                         <div class="col-md-6 animate-box">
                             <div class="progress-wrap ftco-animate">
                                 <h3>{{ $data->skill }}</h3>
@@ -450,8 +461,8 @@
                 </div>
             </div>
             <div class="row">
-                @if (!empty($user->project) && $user->project->count())
-                    @foreach ($user->project as $data)
+                @if (!empty($project) && $project->count())
+                    @foreach ($project as $data)
                         <div class="col-lg-4 col-sm-6 my-1">
                             <div class="card" style="border: none; border-radius: 2%; overflow: hidden;">
                                 <div class="project img ftco-animate d-flex justify-content-end align-items-end"
@@ -558,8 +569,8 @@
                     </p>
                 </div>
             </div>
-            @if (!empty($user->blog) && $user->blog->count())
-                @foreach ($user->blog as $data)
+            @if (!empty($blog) && $blog->count())
+                @foreach ($blog as $data)
                     <div class="row d-flex">
                         <div class="col-md-4 d-flex ftco-animate">
                             <div class="blog-entry justify-content-end">

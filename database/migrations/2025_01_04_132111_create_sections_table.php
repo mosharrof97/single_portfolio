@@ -11,13 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('boards', function (Blueprint $table) {
+        Schema::create('sections', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('degree_id')->constrained('degrees')->onUpdate('cascade')->onDelete('cascade');
             $table->string('name');
-            $table->string('slug')->unique();
+            $table->string('bn_name')->nullable();
             $table->boolean('is_active')->default(true);
+            $table->string('slug')->unique();
+            $table->foreignId('created_by')->constrained('users');
+            $table->foreignId('updated_by')->constrained('users');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('boards');
+        Schema::dropIfExists('sections');
     }
 };

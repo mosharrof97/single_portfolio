@@ -64,6 +64,7 @@ Route::middleware('user')->group(function () {
         });
 
         Route::prefix('education')->group(function () {            
+            Route::get('/api', [AcademicEducationController::class,'degree'])->name('degree.api');
             Route::get('/', [AcademicEducationController::class,'index'])->name('education');
             Route::post('/', [AcademicEducationController::class,'store']);
             Route::put('/update/{id}', [AcademicEducationController::class,'update'])->name('education.update');

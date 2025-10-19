@@ -13,5 +13,7 @@ class Board extends Model
     use HasFactory, Notifiable;
     protected $fillable = [
         'name',
+        'slug',
+        'is_active'
     ];
 }
